@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  font-family: 'Permanent Marker', cursive;
+  /* color: var(--text-black); */
+  /* font-size: 1.1em; */
+}
+
+/* body{
+  overflow: hidden;
+} */
+
+h1,
+section, body,
+p,
+span,
+svg{
+  transition: background-color 0.7s, color 0.7s;
+} 
+
+:root{
+
+  /* Light Theme Variables */
+  --color-text-light: rgb(43, 43, 43);
+  --color-background-light: rgb(236, 195, 119);
+  --color-pink-light:  rgb(151, 150, 147);
+  --color-green-light: rgb(29, 214, 91);
+  --color-blue-light: rgb(26, 160, 223); 
+
+  /* Dak Theme Variables */
+
+  --color-text-dark: rgb(209, 209, 209);
+  --color-background-dark: rgb(116, 84, 107); 
+}
+
+.light-theme{
+  --color-text: var(--color-text-light);
+  --color-background: var(--color-background-light);
+  --color-pink: var(--color-pink-light);
+  --color-green: var(--color-green-light);
+  --color-blue: var(--color-blue-light);
+
+}
+
+
+.dark-theme{
+  --color-text: var(--color-text-dark);
+  --color-background: var(--color-background-dark);
+  --color-pink: var(--color-text-dark);
+  --color-green: var(--color-text-dark);
+  --color-blue: var(--color-text-dark);
+  
+}
+
+
+
+/* Experience ------------------------------------------------------------- */
+
+.experience{
+  position: fixed; /* So its not scrolling around and stays on the screen */
+  width: 100vw; /* takes the entire viewport width */
+  height: 100vh; /* takes the entire viewport height */
+}
+
+.experience.canvas{
+  width: 100%;
+  height: 100%; 
+}
+
+.hidden{
+  display: none;
+}
+
+/* preloader olaaaaaa */
+
+.preloader{
+  background-color: var(--color-background-light);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  opacity: 1;
+  z-index: 99999999999999999;
+
+}
+
+.preloader-wrapper{
+  
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center ;
+  width: 100%;
+  height: 100%;
+}
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.circle{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  align-items: center;
+  margin: 6px;
+  background-color: var(--color-text);
+  animation: load 1s ease-in-out infinite;
+}
+
+.circle:nth-child(2){
+  animation-delay: 0.1s;
+}
+.circle:nth-child(3){
+  animation-delay: 0.2s;
+}
+
+@keyframes load {
+  0%{
+    transform: translateY(0)
+  }
+  
+  20%{
+    transform: translateY(-12px)
+  }
+  
+  0%{
+    transform: translateY(0)
+  }
+  
+}
+
+/* Page itselft ------------------------------------------------------------- */
+
+.page{
+  z-index: 99999;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page-wrapper{
+  position: relative;
+}
+
+/* Preloader Stuff -------------------------------- */
+
+.animatedis{
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.intro-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  font-size: 500;
+  font-weight: 16px;
+  transform: translate(-50%, -50%);
+}
+
+.arrow-svg-wrapper{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  
+  animation: bounce 0.5s ease-in alternate infinite;
+}
+
+@keyframes bounce {
+  0%{
+    transform: translateY(0px)
+  }
+
+  100%{
+    transform: translateY(10px)
+  }
+}
+
+/* Toggle Bar ------------------------------------------------------------- */
+
+.toggle-bar{
+  position: fixed;
+  display: flex;
+  opacity: 0;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 48px;
+  right: 48px;
+  z-index: 99999999999999
+}
+
+.sun-wrapper,
+.moon-wrapper{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text);
+
+}
+
+.toggle-button{
+  cursor: pointer;
+  position: relative;
+  width: 56px;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+  border-radius: 999px;
+  margin: 0px 16px;
+  border: none;
+  box-shadow: rgba(42, 49, 54, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.toggle-circle{
+  position: absolute;
+  left: 6px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-text);
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-button:hover .toggle-circle{
+  transform: scale(0.9);
+}
+
+.slide{
+  left: 28px;
+}
+
+/* Section Formating ------------------------------------------------------------- */
+
+.section-margin{
+  height: 3000px;
+  width: 100%;
+}
+
+.section{
+  position: relative;
+  width: 50%;
+  padding: 1000px 4%;
+  margin: 0;
+  background-color: var(--color-background);
+  overflow: hidden;
+}
+
+.left{
+  margin-right: auto;
+  border-top-right-radius: 700px 700px;
+  border-bottom-right-radius: 0px 0px;
+}
+
+.right{
+  margin-left: auto;
+  border-top-left-radius: 700px 700px;
+  border-bottom-left-radius: 0px 0px;
+}
+
+/* ------------------------ Progess Bars ------------------------ */
+.progress-wrapper{
+  height: 2;
+  width: 12px;
+  z-index: 9999;
+}
+
+.progress-bar-wrapper-left{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-bar-wrapper-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.progress-bar{
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color-green);
+  transform-origin: top center;
+  transform: scaleY(1);
+}
+
+
+/* ------------------------ Sections ------------------------ */
+
+.section-intro-wrapper{
+  position: relative;
+  padding: 20% 5%;
+  border-bottom: 2px solid var(--color-text);
+  padding-bottom: 400px;
+}
+
+.section-detail-wrapper{
+  position: relative;
+  padding: 20% 5%;
+}
+
+.section-heading{
+  font-size:18px;
+  font-weight:700;
+  line-height: 1.8;
+  margin-top: 64px;
+  color: var(--color-text);
+
+}
+
+.section-text{
+  line-height: 2;
+  margin-top: 18px;
+  font-size: 16px;
+  color: var(--color-text);
+
+
+}
+/* Fancy Decoration------------------------------------------------------------- */
+
+.section-title{
+  position: relative;
+  color: var(--color-text);
+}
+
+.section-title-text{
+  display: block;
+  font-size: 40px;
+  font-weight: 500;
+  transform-origin: left;
+  transform: skewY(25deg);
+  z-index: 5;
+  text-transform: uppercase;
+  color: var(--color-text);
+
+}
+
+.styleOne,
+.styleTwo,
+.styleThree{
+  position:absolute;
+  display: block;
+  width: 100%;
+  max-width: 278px;
+  height: 60px;
+  border: 1px solid var(--color-text);
+  transform: skewY(-25deg);
+  transform-origin: left;
+  
+}
+
+.styleOne{
+  top: 0px;
+}
+
+.styleTwo{
+  top: 80px;
+}
+
+.styleThree{
+  top: 80px;
+  transform: skewY(25deg);
+  background-color: var(--color-background);
+}
+
+.section-number{
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  color: var(--color-text);
+  font-size: 24px;
+}
+/* Hero Formating ------------------------------------------------------------- */
+
+
+.hero{
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.hero-wrapper{
+  position: relative;
+  height: 100%;
+  width: calc(100% - 250px);
+  margin: 0 auto;
+  max-width: 1100px ;
+}
+
+.hero-main{
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  color: var(--color-text);
+
+}
+
+.hero-second{
+  position: absolute;
+  top: calc(40% - 350px);
+  left: calc(65% + 150px);
+  right: 0;
+  color: var(--color-text);
+}
+
+.hero-main-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: var(--color-text);
+
+
+}
+
+.hero-main-description{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: var(--color-text);
+
+}
+
+.hero-second-subheading{
+  font-size: 40px;
+  display: flex;
+  position: flex;
+  /* text-transform: uppercase; */
+  color: var(--color-text);
+
+}
+
+.second-sub{
+  font-size: 15px
+}
+
+
+/* Other colors for different sections */
+
+.blue-text{
+  color: var(--color-text-blue);
+}
+
+.blue-border{
+  border-color: var(--color-blue);
+}
+
+.blue-background{
+  background-color: var(--color-blue);
+
+}
+
+.green-text{
+  color: var(--color-text-green);
+}
+
+.green-border{
+  border-color: var(--color-green);
+}
+
+.green-background{
+  background-color: var(--color-green);
+
+}
+
+@media (max-width: 968px){
+  .section{
+    width: 100%;
+  }
+  .progress-bar-wrapper-left{
+    
+    right: 0;
+    left: auto;
+  } 
+
+  .hero-main{
+    
+    width: calc(100% - 0px);
+    
+    
+  }
+  
+  .hero-main-title{
+    font-size: 32px;
+  }
+
+  .hero-main-description{
+    font-size: 18px;
+  }
+
+  .hero-second-subheading{
+    font-size: 18px;
+  }
+}
