@@ -14,8 +14,8 @@ import World from "./World/World.js"
 import Controls from "./World/Controls.js"
 
 // Original Idea: bokoko33.me
-// Special thanks to Andrew Woan for providing an amazing tutorial for everyones
-// make sure you chech his channel out:  https://www.youtube.com/c/AndrewWoan
+// Special thanks to Andrew Woan for providing an amazing tutorial for everyone
+// make sure you check his channel out:  https://www.youtube.com/c/AndrewWoan
 
 export default class Experience{
     static instance

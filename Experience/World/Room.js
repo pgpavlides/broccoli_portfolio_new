@@ -48,7 +48,7 @@ export default class Room {
 
 
 
-            
+            // console.log(this.actualRoom.children)
 
             if(child.name ==="FISHTANK_GLASS_1"){
                 child.material = new THREE.MeshPhysicalMaterial();
@@ -92,7 +92,12 @@ export default class Room {
             //     child.material.opacity = 1;
             // }
 
-            // if(child.name === "DESK_MONITOR"){
+            if(child.name === "DESK_MONITOR_PANEL"){
+                child.material = new THREE.MeshBasicMaterial({
+                    
+                    map : this.resources.items.screen,
+                 });
+            }
             //     // child.material = new THREE.MeshBasicMaterial({color: 0xff00ff});
             //     // console.log(this.resources.items);
 

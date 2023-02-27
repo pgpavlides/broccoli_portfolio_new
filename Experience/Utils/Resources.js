@@ -40,7 +40,7 @@ export default class Resources extends EventEmitter {
                 this.videoTexture = {};
 
                 this.video[asset.name] = document.createElement("video");
-                this.video[asset.name].scr = asset.path;
+                this.video[asset.name].src = asset.path;
                 this.video[asset.name].muted = true;
                 this.video[asset.name].playsInLine = true;
                 this.video[asset.name].autoplay = true;
