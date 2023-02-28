@@ -409,7 +409,6 @@ svg{
 .hero-main{
   position: absolute;
   bottom: 70px;
-  left: 0;
   color: var(--color-text);
 
 }
@@ -511,4 +510,13 @@ svg{
   .hero-second-subheading{
     font-size: 18px;
   }
+}
+
+@media only screen and (max-width: 425px){
+	.hero-wrapper{
+    width: 275px;
+    top: 45px;
+  }
+
+
 }

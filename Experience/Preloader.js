@@ -2,6 +2,7 @@ import Experience from "./Experience.js";
 import { EventEmitter} from "events";
 import GSAP from "gsap"
 import convert from "./Utils/convertDivsToSpans.js";
+import * as THREE from "three"
 
 
 export default class Preloader extends EventEmitter {
@@ -16,6 +17,8 @@ export default class Preloader extends EventEmitter {
         this.world = this.experience.world;
         this.device = this.sizes.device;
         this.room = this.experience.room;
+        this.room2 = this.resources.items.room;
+        this.actualRoom = this.room2
 
         this.roomChildren
 
@@ -28,6 +31,8 @@ export default class Preloader extends EventEmitter {
         this.world.on("worldready", () => {
             this.setAssets();
             this.playIntro();
+            // this.setAnimation();
+
         })
     } 
 
@@ -280,6 +285,7 @@ export default class Preloader extends EventEmitter {
                     z: 0.02,
                     ease: "back.out(2.2)",
                     duration: 0.2,
+                    
                 },">-0.2")
                 .to(this.roomChildren.seaweedarmature001.scale,{
                     x: 0.1,
@@ -791,6 +797,9 @@ export default class Preloader extends EventEmitter {
     }
 
     update(){
+
+        // this.mixer.update(this.time.delta * 0.0007);
+
         if(this.moveFlag){
             this.move();
         }

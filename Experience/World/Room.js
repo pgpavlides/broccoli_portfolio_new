@@ -185,6 +185,7 @@ export default class Room {
         this.arm1 = this.mixer.clipAction(this.room.animations[1]);
         this.arm2 = this.mixer.clipAction(this.room.animations[2]);
         this.arm3 = this.mixer.clipAction(this.room.animations[3]);
+        // console.log(this.mixer)
         
         
         // this.swim.play();
@@ -216,7 +217,7 @@ export default class Room {
         );
 
         this.actualRoom.rotation.y = this.lerp.current;
-        this.mixer.update(this.time.delta * 0.0007);
+        // this.mixer.update(this.time.delta * 0.0007);
     }
 
 }
