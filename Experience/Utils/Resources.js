@@ -5,6 +5,8 @@ import{DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader.js"
 import assets from "./assets.js";
 import Experience from "../Experience.js";
 
+const matrix = new THREE.Matrix4().makeRotationZ(Math.PI / 4);
+
 export default class Resources extends EventEmitter {
     constructor() {
         super();
@@ -51,7 +53,13 @@ export default class Resources extends EventEmitter {
                     this.video[asset.name]
                     );
 
+                this.videoTexture[asset.name].minFilter = THREE.LinearFilter;
+                this.videoTexture[asset.name].magFilter = THREE.LinearFilter;
+
                 this.videoTexture[asset.name].flipY = false;
+
+                // this.videoTexture[asset.name].matrix = matrix ;
+
                 this.videoTexture[asset.name].minFilter = THREE.NearestFilter;
                 this.videoTexture[asset.name].magFilter = THREE.NearestFilter;
                 this.videoTexture[asset.name].generateMipmaps = false;

@@ -96,6 +96,7 @@ export default class Room {
                 child.material = new THREE.MeshBasicMaterial({
                     
                     map : this.resources.items.screen,
+                    wireframe: true,
                  });
             }
             //     // child.material = new THREE.MeshBasicMaterial({color: 0xff00ff});
